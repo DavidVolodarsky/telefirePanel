@@ -1,13 +1,13 @@
-import {Greeter} from "./src/index";
+export { Greeter } from './src/index';
 
-const printMsg = function() {
+export const printMsg = function() {
     console.log("This is a message from the demo package");
     console.log("DEMO RUN START");
 }
 
-exports.telefirePanelConnect ={
-    printMsg : printMsg,
-    greeter: Greeter
-}
+// exports.telefirePanelConnect ={
+//     printMsg : printMsg,
+//     greeter: Greeter
+// }
 
 
