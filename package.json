@@ -4,8 +4,11 @@
   "description": "module for comunication with telefire panel",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start": "node index.js"
+    "test": "jest --config jestconfig.json",
+    "start": "node index.js",
+    "build": "tsc",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -16,10 +19,16 @@
     "panel",
     "connect"
   ],
-  "author": "David Volodarskyi",
+  "author": "David Volodarskyi<davidv@emg-soft.com>(emg-soft.com)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DavidVolodarsky/telefirePanel/issues"
   },
-  "homepage": "https://github.com/DavidVolodarsky/telefirePanel#readme"
+  "homepage": "https://github.com/DavidVolodarsky/telefirePanel#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.2",
+    "typescript": "^4.6.4"
+  }
 }
