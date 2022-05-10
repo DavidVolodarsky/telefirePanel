@@ -1,0 +1,25 @@
+{
+  "name": "telefire-panel-connect",
+  "version": "0.0.1",
+  "description": "module for comunication with telefire panel",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidVolodarsky/telefirePanel.git"
+  },
+  "keywords": [
+    "telefire",
+    "panel",
+    "connect"
+  ],
+  "author": "David Volodarskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidVolodarsky/telefirePanel/issues"
+  },
+  "homepage": "https://github.com/DavidVolodarsky/telefirePanel#readme"
+}
