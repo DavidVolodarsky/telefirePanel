@@ -19,5 +19,3 @@ export { Greeter } from './src/Greeter';
 //     console.log("This is a message from the demo package");
 //     console.log("DEMO RUN START");
 // }
-
-// console.log(mathLibraryDLL.Add(3,6));
