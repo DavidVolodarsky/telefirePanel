@@ -1,17 +1,6 @@
-const ffi = require('ffi-napi');
-const mathLibraryDLL = ffi.Library("./MathLibrary",{
-    "Subtract":[
-        "int", ["int","int"]
-    ],
-    "Add":[
-        "int",["int","int"]
-    ],
-    "Random":[
-        "int",["int","int"]
-    ]
-});
-export default mathLibraryDLL;
-export { Greeter } from './src/Greeter';
+// export { Greeter } from '/dist/Greeter';
+// module.exports = require('./dist/MathLibDll');
+module.exports = require('./dist/MathLibDll');
 
 // export { Greeter } from './src/index';
 
