@@ -11,7 +11,7 @@ const mathLibraryDLL = ffi.Library("./MathLibrary",{
     ]
 });
 export default mathLibraryDLL;
-export { Greeter } from './dist/Greeter'
+export { Greeter } from './src/Greeter';
 
 // export { Greeter } from './src/index';
 
