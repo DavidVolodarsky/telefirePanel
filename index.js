@@ -1,6 +1,5 @@
+// FOR TEST CONNECT
 // export { Greeter } from '/dist/Greeter';
-
-module.exports = require('./dist/MathLibDll');
 
 // export { Greeter } from './src/index';
 
@@ -9,3 +8,10 @@ module.exports = require('./dist/MathLibDll');
 //     console.log("DEMO RUN START");
 // }
 
+
+// FOR TEST DLL liv
+// const MathLibDll = require('./dist/MathLibDll');
+// console.log(`User: ${MathLibDll.MathLibDLLAdd(4,3)}`);
+// console.log(`User: ${MathLibDll.getName()}`);
+
+exports.MathLibDll = require('./dist/MathLibDll');

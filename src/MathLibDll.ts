@@ -1,5 +1,5 @@
 const ffi = require('ffi-napi');
-const MathLibDLL = ffi.Library("./MathLibrary",{
+const MathLibDLL = ffi.Library("../dllFiles/MathLibrary.dll",{
     "Subtract":[
         "int", ["int","int"]
     ],
@@ -11,4 +11,5 @@ const MathLibDLL = ffi.Library("./MathLibrary",{
     ]
 });
 
-exports.MathLibDLL = MathLibDLL;
+exports.MathLibDLLSub = MathLibDLL.Subtract;
+exports.MathLibDLLAdd = MathLibDLL.Add;
