@@ -1,3 +1,5 @@
+console.log('telefire-panel-connect run:');
+
 // FOR TEST CONNECT
 // export { Greeter } from '/dist/Greeter';
 
@@ -9,9 +11,10 @@
 // }
 
 
-// FOR TEST DLL liv
-// const MathLibDll = require('./dist/MathLibDll');
-// console.log(`User: ${MathLibDll.MathLibDLLAdd(4,3)}`);
-// console.log(`User: ${MathLibDll.getName()}`);
-
 exports.MathLibDll = require('./dist/MathLibDll');
+
+// FOR TEST DLL
+
+// const MathLibDll = require('./dist/MathLibDll');
+// console.log(`TEST ADD: ${MathLibDll.MathLibDLLAdd(4,3)}`);
+// console.log(`TEST SUB: ${MathLibDll.MathLibDLLSub(4,3)}`);

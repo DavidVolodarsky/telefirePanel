@@ -1,5 +1,8 @@
 const ffi = require('ffi-napi');
-const MathLibDLL = ffi.Library("../dllFiles/MathLibrary.dll",{
+const path = require('path');
+
+const pathDll = path.join(__dirname,"MathLibTest.dll");
+const MathLibDLL = ffi.Library(pathDll,{
     "Subtract":[
         "int", ["int","int"]
     ],
