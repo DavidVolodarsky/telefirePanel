@@ -18,3 +18,6 @@ exports.MathLibDll = require('./dist/MathLibDll');
 // const MathLibDll = require('./dist/MathLibDll');
 // console.log(`TEST ADD: ${MathLibDll.MathLibDLLAdd(4,3)}`);
 // console.log(`TEST SUB: ${MathLibDll.MathLibDLLSub(4,3)}`);
+
+//TEST API mock up
+exports.telefireApi = require('./dist/telefireApi');

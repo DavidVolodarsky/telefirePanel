@@ -1,7 +1,7 @@
 {
   "name": "telefire-panel-connect",
   "version": "0.0.7",
-  "description": "module for comunication with telefire panel",
+  "description": "module for communication with telefire panel",
   "main": "index.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
