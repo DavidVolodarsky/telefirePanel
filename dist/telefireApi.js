@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 //LOGIN API
-var loginAPI = function (name, oldPcID, newPcID) {
-    console.log('LoginAPI_IN', name, oldPcID, newPcID);
+var loginAPI = function (req) {
+    console.log('LoginAPI_IN', req.Name, req.OldPcID, req.NewPcID);
     return ({
         Name: "Login",
         ClientNo: "111",
@@ -11,8 +11,8 @@ var loginAPI = function (name, oldPcID, newPcID) {
 };
 // console.log('loginAPI:', loginAPI('Stas','Test','1234'));
 //SET COMMUNICATION
-var setCommunicationAPI = function (name, type, baud, port, vid, pid, ip, tcPort) {
-    console.log('SetCommunication:', name, type, baud, port, vid, pid, ip, tcPort);
+var setCommunicationAPI = function (reqObj) {
+    console.log('SetCommunication:', reqObj.Name, reqObj.Type, reqObj.Baud, reqObj.Port, reqObj.Vid, reqObj.Pid, reqObj.Ip, reqObj.TcPort);
     return ({
         Name: "SetCommunication",
         Type: "USB",
@@ -21,8 +21,8 @@ var setCommunicationAPI = function (name, type, baud, port, vid, pid, ip, tcPort
 };
 // console.log('SetCommunication:', SetCommunicationAPI('Set Com', 'USB',2,'',2,2,'4545',111));
 //CONNECT TO PANEL
-var connectToPanelAPI = function (name, panel, ownerShip) {
-    console.log('connectToPanel:', name, panel, ownerShip);
+var connectToPanelAPI = function (reqObj) {
+    console.log('connectToPanel:', reqObj.Name, reqObj.Panel, reqObj.OwnerShip);
     return ({
         Name: "Connect to panel",
         ReqPanel: "Local",
@@ -36,7 +36,7 @@ var connectToPanelAPI = function (name, panel, ownerShip) {
         ownership: "null"
     });
 };
-console.log('connectToPanel:', connectToPanelAPI('Set Com', 'USB', 'art'));
+// console.log('connectToPanel:', connectToPanelAPI('Set Com', 'USB','art'));
 exports.login = loginAPI;
 exports.setCommunication = setCommunicationAPI;
 exports.connectToPanel = connectToPanelAPI;

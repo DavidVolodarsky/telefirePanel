@@ -8,10 +8,25 @@ interface ILoginResponse {
     ClientNo: string;
     Result: string;
 }
+interface ISetCommunicationReq {
+    Name: string;
+    Type: string;
+    Baud: number;
+    Port: string;
+    Vid: number;
+    Pid: number;
+    Ip: string;
+    TcPort: number;
+}
 interface ISetCommunicationRes {
     Name: string;
     Type: string;
     Result: string;
+}
+interface IConnectPanelReq {
+    Name: string;
+    Panel: string;
+    OwnerShip: string;
 }
 interface IConnectPanelRes {
     Name: string;
@@ -25,4 +40,4 @@ interface IConnectPanelRes {
     date: string;
     ownership: string;
 }
-export { ILoginRequest, ILoginResponse, ISetCommunicationRes, IConnectPanelRes };
+export { ILoginRequest, ILoginResponse, ISetCommunicationReq, ISetCommunicationRes, IConnectPanelReq, IConnectPanelRes };
