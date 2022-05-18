@@ -1,4 +1,6 @@
 //interface for telefire APi
+
+//-----Login-------
 interface ILoginRequest {
     Name: string,
     OldPcID: string,
@@ -11,10 +13,29 @@ interface ILoginResponse {
     Result:string
 }
 
+//---------Set Communication------
+interface ISetCommunicationReq{
+    Name:string,
+    Type:string,
+    Baud:number,
+    Port:string,
+    Vid:number,
+    Pid:number,
+    Ip:string,
+    TcPort:number
+}
+
 interface ISetCommunicationRes {
     Name: string,
     Type: string,
     Result: string,
+}
+
+//-------ConnectPanel-------
+interface IConnectPanelReq{
+    Name:string,
+    Panel:string,
+    OwnerShip:string
 }
 
 interface IConnectPanelRes{
@@ -30,4 +51,4 @@ interface IConnectPanelRes{
     ownership:string
 }
 
-export {ILoginRequest,ILoginResponse,ISetCommunicationRes,IConnectPanelRes};
+export {ILoginRequest,ILoginResponse,ISetCommunicationReq,ISetCommunicationRes,IConnectPanelReq,IConnectPanelRes};

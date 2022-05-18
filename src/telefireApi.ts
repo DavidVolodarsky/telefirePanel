@@ -1,14 +1,12 @@
 //functions for with 'telefire' dll file api
-import { ILoginResponse} from "./telefireApiInterface";
-import {ISetCommunicationRes} from "./telefireApiInterface";
-import {IConnectPanelRes} from "./telefireApiInterface";
+import {ILoginRequest, ILoginResponse} from "./telefireApiInterface";
+import {ISetCommunicationReq,ISetCommunicationRes} from "./telefireApiInterface";
+import {IConnectPanelReq,IConnectPanelRes} from "./telefireApiInterface";
 
 
 //LOGIN API
-const loginAPI = (name: string,
-                  oldPcID: string,
-                  newPcID: string) : ILoginResponse=>{
-    console.log('LoginAPI_IN', name,oldPcID,newPcID);
+const loginAPI = (req:ILoginRequest) : ILoginResponse=>{
+    console.log('LoginAPI_IN', req.Name,req.OldPcID,req.NewPcID);
     return({
         Name:"Login",
         ClientNo:"111",
@@ -19,8 +17,8 @@ const loginAPI = (name: string,
 
 
 //SET COMMUNICATION
-const setCommunicationAPI = ( name:string, type:string, baud:number,   port:string, vid:number, pid:number, ip:string, tcPort:number):ISetCommunicationRes=>{
-    console.log('SetCommunication:',name,type,baud,port,vid,pid,ip,tcPort);
+const setCommunicationAPI = ( reqObj:ISetCommunicationReq):ISetCommunicationRes=>{
+    console.log('SetCommunication:',reqObj.Name,reqObj.Type,reqObj.Baud,reqObj.Port,reqObj.Vid,reqObj.Pid,reqObj.Ip,reqObj.TcPort);
     return({
         Name: "SetCommunication",
         Type: "USB",
@@ -30,8 +28,8 @@ const setCommunicationAPI = ( name:string, type:string, baud:number,   port:stri
 // console.log('SetCommunication:', SetCommunicationAPI('Set Com', 'USB',2,'',2,2,'4545',111));
 
 //CONNECT TO PANEL
-const connectToPanelAPI = (name:string, panel:string, ownerShip:string) : IConnectPanelRes =>{
-    console.log('connectToPanel:',name,panel,ownerShip);
+const connectToPanelAPI = (reqObj:IConnectPanelReq) : IConnectPanelRes =>{
+    console.log('connectToPanel:',reqObj.Name,reqObj.Panel,reqObj.OwnerShip);
 
     return ({
         Name:"Connect to panel",
@@ -46,7 +44,7 @@ const connectToPanelAPI = (name:string, panel:string, ownerShip:string) : IConne
         ownership:"null"
     });
 }
-console.log('connectToPanel:', connectToPanelAPI('Set Com', 'USB','art'));
+// console.log('connectToPanel:', connectToPanelAPI('Set Com', 'USB','art'));
 
 exports.login = loginAPI;
 exports.setCommunication = setCommunicationAPI;
