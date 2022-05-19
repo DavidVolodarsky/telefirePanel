@@ -3,48 +3,45 @@ import {ILoginRequest, ILoginResponse} from "./telefireApiInterface";
 import {ISetCommunicationReq,ISetCommunicationRes} from "./telefireApiInterface";
 import {IConnectPanelReq,IConnectPanelRes} from "./telefireApiInterface";
 
+const telefireLibDll = require('../dist/telefireLibDll');
 
 //LOGIN API
-const loginAPI = (req:ILoginRequest) : ILoginResponse=>{
-    console.log('LoginAPI_IN', req.Name,req.OldPcID,req.NewPcID);
-    return({
-        Name:"Login",
-        ClientNo:"111",
-        Result:"21221"
-    })
+const loginAPI = (reqObj:ILoginRequest) : ILoginResponse=>{
+    // console.log('LoginAPI_IN:', reqObj.Name,reqObj.OldPcID,reqObj.NewPcID);
+    const reqStr = JSON.stringify(reqObj);
+
+    const resStr = telefireLibDll.Login(reqStr);
+
+    return JSON.parse(resStr) as ILoginResponse;
+
+    // return JSON.parse(telefireLibDll.Login(JSON.stringify(req))); //short variant
 }
-// console.log('loginAPI:', loginAPI('Stas','Test','1234'));
+// console.log('loginAPI:', loginAPI({Name:'Stas', OldPcID: 'Test', NewPcID:'test string'}));
 
 
 //SET COMMUNICATION
 const setCommunicationAPI = ( reqObj:ISetCommunicationReq):ISetCommunicationRes=>{
-    console.log('SetCommunication:',reqObj.Name,reqObj.Type,reqObj.Baud,reqObj.Port,reqObj.Vid,reqObj.Pid,reqObj.Ip,reqObj.TcPort);
-    return({
-        Name: "SetCommunication",
-        Type: "USB",
-        Result: "OK",
-    });
+    // console.log('SetCommunication_IN:',reqObj.Name,reqObj.Type,reqObj.Baud,reqObj.Port,reqObj.Vid,reqObj.Pid,reqObj.Ip,reqObj.TcPort);
+
+    const reqStr = JSON.stringify(reqObj);
+
+    const resStr = telefireLibDll.SetCommunication(reqStr);
+
+    return JSON.parse(resStr) as ISetCommunicationRes;
 }
-// console.log('SetCommunication:', SetCommunicationAPI('Set Com', 'USB',2,'',2,2,'4545',111));
+// console.log('SetCommunication:', setCommunicationAPI({Name:'Set Com', Type:'USB', Baud:2, Port:'80', Vid:2, Pid:2, Ip:'128.32.4545', TcPort:3000}));
 
 //CONNECT TO PANEL
 const connectToPanelAPI = (reqObj:IConnectPanelReq) : IConnectPanelRes =>{
-    console.log('connectToPanel:',reqObj.Name,reqObj.Panel,reqObj.OwnerShip);
+    // console.log('connectToPanel_IN:',reqObj.Name,reqObj.Panel,reqObj.OwnerShip);
 
-    return ({
-        Name:"Connect to panel",
-        ReqPanel:"Local",
-        result:"USB not connected",
-        Panel:0,
-        type:"null",
-        version:"null",
-        processor:"null",
-        serial:"null",
-        date:"null",
-        ownership:"null"
-    });
+    const reqStr = JSON.stringify(reqObj);
+
+    const resStr = telefireLibDll.ConnectToPanel(reqStr);
+
+    return JSON.parse(resStr) as IConnectPanelRes;
 }
-// console.log('connectToPanel:', connectToPanelAPI('Set Com', 'USB','art'));
+// console.log('connectToPanel:', connectToPanelAPI({Name:'Set Com', Panel:'USB', OwnerShip:'art'}));
 
 exports.login = loginAPI;
 exports.setCommunication = setCommunicationAPI;
