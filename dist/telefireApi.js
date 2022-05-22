@@ -26,6 +26,20 @@ var connectToPanelAPI = function (reqObj) {
     return JSON.parse(resStr);
 };
 // console.log('connectToPanel:', connectToPanelAPI({Name:'Set Com', Panel:'USB', OwnerShip:'art'}));
+//GET CONFIGURATION
+var getConfigurationAPI = function (reqObj) {
+    var reqStr = JSON.stringify(reqObj);
+    var resStr = telefireLibDll.getConfiguration(reqStr);
+    return JSON.parse(resStr);
+};
+//SET CONFIGURATION
+var setConfigurationAPI = function (reqObj) {
+    var reqStr = JSON.stringify(reqObj);
+    var resStr = telefireLibDll.setConfiguration(reqStr);
+    return JSON.parse(resStr);
+};
 exports.login = loginAPI;
 exports.setCommunication = setCommunicationAPI;
 exports.connectToPanel = connectToPanelAPI;
+exports.getConfiguration = getConfigurationAPI;
+exports.setConfiguration = setConfigurationAPI;

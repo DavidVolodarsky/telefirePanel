@@ -1,4 +1,4 @@
-//interface for telefire APi
+//interface for telefire APi - CONNECT
 
 //-----Login-------
 interface ILoginRequest {

@@ -10,8 +10,16 @@ var telefireLib = ffi.Library(pathDll, {
     ],
     "ConnectToPanel": [
         "string", ["string"]
-    ]
+    ],
+    "GetConfiguration": [
+        "string", ["string"]
+    ],
+    "SetConfiguration": [
+        "string", ["string"]
+    ],
 });
 exports.Login = telefireLib.Login;
 exports.SetCommunication = telefireLib.SetCommunication;
 exports.ConnectToPanel = telefireLib.ConnectToPanel;
+exports.getConfiguration = telefireLib.GetConfiguration;
+exports.setConfiguration = telefireLib.SetConfiguration;

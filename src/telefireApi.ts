@@ -1,7 +1,9 @@
 //functions for with 'telefire' dll file api
-import {ILoginRequest, ILoginResponse} from "./telefireApiInterface";
-import {ISetCommunicationReq,ISetCommunicationRes} from "./telefireApiInterface";
-import {IConnectPanelReq,IConnectPanelRes} from "./telefireApiInterface";
+import {ILoginRequest, ILoginResponse} from "./telefireApiInterface-connect";
+import {ISetCommunicationReq,ISetCommunicationRes} from "./telefireApiInterface-connect";
+import {IConnectPanelReq,IConnectPanelRes} from "./telefireApiInterface-connect";
+import {IGetConfigurationReq,IGetConfigurationRes} from "./telefireApiInterface-configuration";
+import {ISetConfigurationReq,ISetConfigurationRes} from "./telefireApiInterface-configuration";
 
 const telefireLibDll = require('../dist/telefireLibDll');
 
@@ -43,6 +45,27 @@ const connectToPanelAPI = (reqObj:IConnectPanelReq) : IConnectPanelRes =>{
 }
 // console.log('connectToPanel:', connectToPanelAPI({Name:'Set Com', Panel:'USB', OwnerShip:'art'}));
 
+//GET CONFIGURATION
+const getConfigurationAPI = (reqObj:IGetConfigurationReq):IGetConfigurationRes=>{
+    const reqStr = JSON.stringify(reqObj);
+
+    const resStr = telefireLibDll.getConfiguration(reqStr);
+
+    return JSON.parse(resStr) as IGetConfigurationRes;
+}
+
+//SET CONFIGURATION
+const setConfigurationAPI = (reqObj:ISetConfigurationReq):ISetConfigurationRes=>{
+    const reqStr = JSON.stringify(reqObj);
+
+    const resStr = telefireLibDll.setConfiguration(reqStr);
+
+    return JSON.parse(resStr) as ISetConfigurationRes;
+}
+
 exports.login = loginAPI;
 exports.setCommunication = setCommunicationAPI;
 exports.connectToPanel = connectToPanelAPI;
+exports.getConfiguration = getConfigurationAPI;
+exports.setConfiguration = setConfigurationAPI;
+
