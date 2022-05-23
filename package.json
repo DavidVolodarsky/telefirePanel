@@ -1,6 +1,6 @@
 {
   "name": "telefire-panel-connect",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "module for communication with telefire panel",
   "main": "index.js",
   "scripts": {
