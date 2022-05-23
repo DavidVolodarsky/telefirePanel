@@ -3,8 +3,10 @@ import { ISetCommunicationReq, ISetCommunicationRes } from "./telefireApiInterfa
 import { IConnectPanelReq, IConnectPanelRes } from "./telefireApiInterface-connect";
 import { IGetConfigurationReq, IGetConfigurationRes } from "./telefireApiInterface-configuration";
 import { ISetConfigurationReq, ISetConfigurationRes } from "./telefireApiInterface-configuration";
-export declare const loginAPI: (reqObj: ILoginRequest) => ILoginResponse;
-export declare const setCommunicationAPI: (reqObj: ISetCommunicationReq) => ISetCommunicationRes;
-export declare const connectToPanelAPI: (reqObj: IConnectPanelReq) => IConnectPanelRes;
-export declare const getConfigurationAPI: (reqObj: IGetConfigurationReq) => IGetConfigurationRes;
-export declare const setConfigurationAPI: (reqObj: ISetConfigurationReq) => ISetConfigurationRes;
+export declare class TelefireApi {
+    static login: (reqObj: ILoginRequest) => ILoginResponse;
+    static setCommunication: (reqObj: ISetCommunicationReq) => ISetCommunicationRes;
+    static connectToPanel: (reqObj: IConnectPanelReq) => IConnectPanelRes;
+    static getConfiguration: (reqObj: IGetConfigurationReq) => IGetConfigurationRes;
+    static setConfiguration: (reqObj: ISetConfigurationReq) => ISetConfigurationRes;
+}
