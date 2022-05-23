@@ -8,7 +8,7 @@ import {ISetConfigurationReq,ISetConfigurationRes} from "./telefireApiInterface-
 const telefireLibDll = require('../dist/telefireLibDll');
 
 //LOGIN API
-const loginAPI = (reqObj:ILoginRequest) : ILoginResponse=>{
+export const loginAPI = (reqObj:ILoginRequest) : ILoginResponse=>{
     // console.log('LoginAPI_IN:', reqObj.Name,reqObj.OldPcID,reqObj.NewPcID);
     const reqStr = JSON.stringify(reqObj);
 
@@ -22,7 +22,7 @@ const loginAPI = (reqObj:ILoginRequest) : ILoginResponse=>{
 
 
 //SET COMMUNICATION
-const setCommunicationAPI = ( reqObj:ISetCommunicationReq):ISetCommunicationRes=>{
+export const setCommunicationAPI = ( reqObj:ISetCommunicationReq):ISetCommunicationRes=>{
     // console.log('SetCommunication_IN:',reqObj.Name,reqObj.Type,reqObj.Baud,reqObj.Port,reqObj.Vid,reqObj.Pid,reqObj.Ip,reqObj.TcPort);
 
     const reqStr = JSON.stringify(reqObj);
@@ -34,7 +34,7 @@ const setCommunicationAPI = ( reqObj:ISetCommunicationReq):ISetCommunicationRes=
 // console.log('SetCommunication:', setCommunicationAPI({Name:'Set Com', Type:'USB', Baud:2, Port:'80', Vid:2, Pid:2, Ip:'128.32.4545', TcPort:3000}));
 
 //CONNECT TO PANEL
-const connectToPanelAPI = (reqObj:IConnectPanelReq) : IConnectPanelRes =>{
+export const connectToPanelAPI = (reqObj:IConnectPanelReq) : IConnectPanelRes =>{
     // console.log('connectToPanel_IN:',reqObj.Name,reqObj.Panel,reqObj.OwnerShip);
 
     const reqStr = JSON.stringify(reqObj);
@@ -46,7 +46,7 @@ const connectToPanelAPI = (reqObj:IConnectPanelReq) : IConnectPanelRes =>{
 // console.log('connectToPanel:', connectToPanelAPI({Name:'Set Com', Panel:'USB', OwnerShip:'art'}));
 
 //GET CONFIGURATION
-const getConfigurationAPI = (reqObj:IGetConfigurationReq):IGetConfigurationRes=>{
+export const getConfigurationAPI = (reqObj:IGetConfigurationReq):IGetConfigurationRes=>{
     const reqStr = JSON.stringify(reqObj);
 
     const resStr = telefireLibDll.getConfiguration(reqStr);
@@ -55,7 +55,7 @@ const getConfigurationAPI = (reqObj:IGetConfigurationReq):IGetConfigurationRes=>
 }
 
 //SET CONFIGURATION
-const setConfigurationAPI = (reqObj:ISetConfigurationReq):ISetConfigurationRes=>{
+export const setConfigurationAPI = (reqObj:ISetConfigurationReq):ISetConfigurationRes=>{
     const reqStr = JSON.stringify(reqObj);
 
     const resStr = telefireLibDll.setConfiguration(reqStr);
@@ -63,9 +63,9 @@ const setConfigurationAPI = (reqObj:ISetConfigurationReq):ISetConfigurationRes=>
     return JSON.parse(resStr) as ISetConfigurationRes;
 }
 
-exports.login = loginAPI;
-exports.setCommunication = setCommunicationAPI;
-exports.connectToPanel = connectToPanelAPI;
-exports.getConfiguration = getConfigurationAPI;
-exports.setConfiguration = setConfigurationAPI;
+// exports.login = loginAPI;
+// exports.setCommunication = setCommunicationAPI;
+// module.exports.connectToPanel = connectToPanelAPI;
+// module.exports.getConfiguration = getConfigurationAPI;
+// module.exports.setConfiguration = setConfigurationAPI;
 

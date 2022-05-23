@@ -1,3 +1,4 @@
+"use strict";
 // const ffi = require('ffi-napi');
 // const path = require('path');
 //

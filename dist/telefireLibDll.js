@@ -1,3 +1,4 @@
+"use strict";
 var ffi = require('ffi-napi');
 var path = require('path');
 var pathDll = path.join(__dirname, "TelefireApiMock.dll");
