@@ -1,8 +1,9 @@
 "use strict";
 var ffi = require('ffi-napi');
 var path = require('path');
-var pathDll = path.join(__dirname, "TelefireApiMock.dll");
-var telefireLib = ffi.Library(pathDll, {
+var dllPath = path.join(__dirname, "dlls", "TelefireApiMock.dll");
+// const pathDll = path.join(__dirname, "TelefireApiMock.dll");
+var telefireLib = ffi.Library(dllPath, {
     "Login": [
         "string", ["string"]
     ],

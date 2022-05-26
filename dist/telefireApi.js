@@ -7,29 +7,23 @@ var TelefireApi = /** @class */ (function () {
     }
     //LOGIN API
     TelefireApi.login = function (reqObj) {
-        // console.log('LoginAPI_IN:', reqObj.Name,reqObj.OldPcID,reqObj.NewPcID);
         var reqStr = JSON.stringify(reqObj);
         var resStr = telefireLibDll.Login(reqStr);
         return JSON.parse(resStr);
         // return JSON.parse(telefireLibDll.Login(JSON.stringify(req))); //short variant
     };
-    // console.log('loginAPI:', loginAPI({Name:'Stas', OldPcID: 'Test', NewPcID:'test string'}));
     //SET COMMUNICATION
     TelefireApi.setCommunication = function (reqObj) {
-        // console.log('SetCommunication_IN:',reqObj.Name,reqObj.Type,reqObj.Baud,reqObj.Port,reqObj.Vid,reqObj.Pid,reqObj.Ip,reqObj.TcPort);
         var reqStr = JSON.stringify(reqObj);
         var resStr = telefireLibDll.SetCommunication(reqStr);
         return JSON.parse(resStr);
     };
-    // console.log('SetCommunication:', setCommunicationAPI({Name:'Set Com', Type:'USB', Baud:2, Port:'80', Vid:2, Pid:2, Ip:'128.32.4545', TcPort:3000}));
     //CONNECT TO PANEL
     TelefireApi.connectToPanel = function (reqObj) {
-        // console.log('connectToPanel_IN:',reqObj.Name,reqObj.Panel,reqObj.OwnerShip);
         var reqStr = JSON.stringify(reqObj);
         var resStr = telefireLibDll.ConnectToPanel(reqStr);
         return JSON.parse(resStr);
     };
-    // console.log('connectToPanel:', connectToPanelAPI({Name:'Set Com', Panel:'USB', OwnerShip:'art'}));
     //GET CONFIGURATION
     TelefireApi.getConfiguration = function (reqObj) {
         var reqStr = JSON.stringify(reqObj);
@@ -45,3 +39,6 @@ var TelefireApi = /** @class */ (function () {
     return TelefireApi;
 }());
 exports.TelefireApi = TelefireApi;
+// console.log('loginAPI:', TelefireApi.login({Name:'Stas', OldPcID: 'Test', NewPcID:'test string'}));
+// console.log('SetCommunication:', TelefireApi.setCommunication({Name:'Set Com', Type:'USB', Baud:2, Port:'80', Vid:2, Pid:2, Ip:'128.32.4545', TcPort:3000}));
+// console.log('connectToPanel:', TelefireApi.connectToPanel({Name:'Set Com', Panel:234, OwnerShip:'dart'}));

@@ -1,8 +1,9 @@
 const ffi = require('ffi-napi');
 const path = require('path');
-const pathDll = path.join(__dirname, "TelefireApiMock.dll");
+const dllPath = path.join(__dirname, "dlls", "TelefireApiMock.dll");
+// const pathDll = path.join(__dirname, "TelefireApiMock.dll");
 
-const telefireLib = ffi.Library(pathDll, {
+const telefireLib = ffi.Library(dllPath, {
     "Login": [
         "string", ["string"]
     ],
@@ -23,6 +24,8 @@ const telefireLib = ffi.Library(pathDll, {
         "string",["string"]
     ],
 });
+
+
 
 exports.Login = telefireLib.Login;
 exports.SetCommunication = telefireLib.SetCommunication;
