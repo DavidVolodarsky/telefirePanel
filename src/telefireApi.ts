@@ -4,6 +4,10 @@ import {ISetCommunicationReq, ISetCommunicationRes} from "./telefireApiInterface
 import {IConnectPanelReq, IConnectPanelRes} from "./telefireApiInterface-connect";
 import {IGetConfigurationReq, IGetConfigurationRes} from "./telefireApiInterface-configuration";
 import {ISetConfigurationReq, ISetConfigurationRes} from "./telefireApiInterface-configuration";
+import {
+    IListProjectsRequest,
+    IListProjectsResponse
+} from "./telefireApiInterface-projectManagement";
 
 
 const telefireLibDll = require('../dist/telefireLibDll');
@@ -19,7 +23,7 @@ export class TelefireApi {
         // return JSON.parse(telefireLibDll.Login(JSON.stringify(req))); //short variant
     }
 
-//SET COMMUNICATION
+    //SET COMMUNICATION
     static setCommunication = (reqObj: ISetCommunicationReq): ISetCommunicationRes => {
         const reqStr = JSON.stringify(reqObj);
 
@@ -28,7 +32,7 @@ export class TelefireApi {
         return JSON.parse(resStr) as ISetCommunicationRes;
     }
 
-//CONNECT TO PANEL
+    //CONNECT TO PANEL
     static connectToPanel = (reqObj: IConnectPanelReq): IConnectPanelRes => {
         const reqStr = JSON.stringify(reqObj);
 
@@ -37,7 +41,7 @@ export class TelefireApi {
         return JSON.parse(resStr) as IConnectPanelRes;
     }
 
-//GET CONFIGURATION
+    //GET CONFIGURATION
     static getConfiguration = (reqObj: IGetConfigurationReq): IGetConfigurationRes => {
         const reqStr = JSON.stringify(reqObj);
 
@@ -46,7 +50,7 @@ export class TelefireApi {
         return JSON.parse(resStr) as IGetConfigurationRes;
     }
 
-//SET CONFIGURATION
+    //SET CONFIGURATION
     static setConfiguration = (reqObj: ISetConfigurationReq): ISetConfigurationRes => {
         const reqStr = JSON.stringify(reqObj);
 
@@ -54,7 +58,17 @@ export class TelefireApi {
 
         return JSON.parse(resStr) as ISetConfigurationRes;
     }
+
+    //LIST PROJECTS
+    static listProjects = (reqObj: IListProjectsRequest): IListProjectsResponse => {
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.listProjects(reqStr);
+
+        return JSON.parse(resStr) as IListProjectsResponse;
+    }
 }
+
 
 // console.log('loginAPI:', TelefireApi.login({Name:'Stas', OldPcID: 'Test', NewPcID:'test string'}));
 // console.log('SetCommunication:', TelefireApi.setCommunication({Name:'Set Com', Type:'USB', Baud:2, Port:'80', Vid:2, Pid:2, Ip:'128.32.4545', TcPort:3000}));

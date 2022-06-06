@@ -11,24 +11,11 @@ const logMethodResponse = (method, object) => {
     }
 }
 
-
-logMethodResponse(
-    'getDevice',
-    {
-        Name: null,
-        Panel: 'Local',
-        Source: 'File',
-        Loop: 1,
-        Address: 1,
-        Type: 'Adr7000',
-    }
-);
-
 logMethodResponse(
     'listProjects',
     {
         Name: 'ListProjects',
-        Dir: '../dist/',
+        Dir: 'C://projects//test//telefireRar',
     }
 );
 
