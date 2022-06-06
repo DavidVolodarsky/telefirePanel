@@ -32,4 +32,3 @@ exports.getConfiguration = telefireLib.GetConfiguration;
 exports.setConfiguration = telefireLib.SetConfiguration;
 exports.getDevice = telefireLib.GetDevice;
 exports.listProjects = telefireLib.ListProjects;
-
