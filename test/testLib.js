@@ -11,13 +11,13 @@ const logMethodResponse = (method, object) => {
     }
 }
 
-logMethodResponse(
-    'listProjects',
-    {
-        Name: 'ListProjects',
-        Dir: 'C://projects//test//telefireRar',
-    }
-);
+// logMethodResponse(
+//     'listProjects',
+//     {
+//         Name: 'ListProjects',
+//         Dir: 'C://projects//test//telefireRar',
+//     }
+// );
 
 logMethodResponse(
     'Login',

@@ -45,6 +45,6 @@ var TelefireApi = /** @class */ (function () {
     return TelefireApi;
 }());
 exports.TelefireApi = TelefireApi;
-// console.log('loginAPI:', TelefireApi.login({Name:'Stas', OldPcID: 'Test', NewPcID:'test string'}));
-// console.log('SetCommunication:', TelefireApi.setCommunication({Name:'Set Com', Type:'USB', Baud:2, Port:'80', Vid:2, Pid:2, Ip:'128.32.4545', TcPort:3000}));
+// console.log('loginAPI:', TelefireApi.login({Name:'Login', OldPcID: '', NewPcID:''}));
+// console.log('SetCommunication:', TelefireApi.setCommunication({Name:'SetCommunicationChannel', Type:'USB', Baud:0, Port:null, Vid:8137, Pid:33320, Ip:null, TcPort:0}));
 // console.log('connectToPanel:', TelefireApi.connectToPanel({Name:'Set Com', Panel:234, OwnerShip:'dart'}));
