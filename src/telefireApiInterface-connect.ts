@@ -3,8 +3,9 @@
 //-----Login-------
 interface ILoginRequest {
     Name: string,
-    OldPcID: string,
-    NewPcID: string
+    CreateDirections: boolean,
+    OldPcID?: string,
+    NewPcID?: string
 }
 
 interface ILoginResponse {
