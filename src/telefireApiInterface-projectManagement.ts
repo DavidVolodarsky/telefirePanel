@@ -19,4 +19,33 @@ interface IListProjectsResponse {
     Count: string,
 }
 
-export {IListProjectsRequest, IListProjectsResponse}
+interface IListProjectFilesRequest {
+    Name: string,
+    Project: string,
+}
+
+interface IProjectFile {
+    FileName: string,
+}
+
+interface IListProjectFilesResponse {
+    Files: IProjectFile[],
+    Name: string,
+    Project: string,
+    Count: number,
+}
+
+interface ISelectProjectFileRequest {
+    Name: string,
+    filename: string,
+}
+
+interface ISelectProjectFileResponse {
+    Name: string,
+    filename: string,
+    Result: string,
+}
+
+
+
+export {IListProjectsRequest, IListProjectsResponse, IListProjectFilesRequest, IListProjectFilesResponse, ISelectProjectFileRequest, ISelectProjectFileResponse}

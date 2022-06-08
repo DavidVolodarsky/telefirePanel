@@ -48,6 +48,22 @@ logMethodResponse(
 );
 
 logMethodResponse(
+    'listProjectFiles',
+    {
+        Name: 'ListProjectFiles',
+        Project: 'C:\\TFclient\\projects\\BASIC',
+    }
+);
+
+logMethodResponse(
+    'selectProjectFile',
+    {
+        Name: 'SelectProjectFile',
+        filename: 'C:\\TFclient\\projects\\BASIC\\Base.nanl',
+    }
+);
+
+logMethodResponse(
     'getConfiguration',
     {
         Name: 'GetConfiguration',

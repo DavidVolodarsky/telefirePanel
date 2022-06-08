@@ -5,8 +5,9 @@ import {IConnectPanelReq, IConnectPanelRes} from "./telefireApiInterface-connect
 import {IGetConfigurationReq, IGetConfigurationRes} from "./telefireApiInterface-configuration";
 import {ISetConfigurationReq, ISetConfigurationRes} from "./telefireApiInterface-configuration";
 import {
+    IListProjectFilesRequest, IListProjectFilesResponse,
     IListProjectsRequest,
-    IListProjectsResponse
+    IListProjectsResponse, ISelectProjectFileRequest, ISelectProjectFileResponse
 } from "./telefireApiInterface-projectManagement";
 
 
@@ -66,6 +67,22 @@ export class TelefireApi {
         const resStr = telefireLibDll.listProjects(reqStr);
 
         return JSON.parse(resStr) as IListProjectsResponse;
+    }
+
+    static listProjectFiles = (reqObj: IListProjectFilesRequest): IListProjectFilesResponse => {
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.listProjectFiles(reqStr);
+
+        return JSON.parse(resStr) as IListProjectFilesResponse;
+    }
+
+    static selectProjectFile = (reqObj: ISelectProjectFileRequest): ISelectProjectFileResponse => {
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.listProjectFiles(reqStr);
+
+        return JSON.parse(resStr) as ISelectProjectFileResponse;
     }
 }
 

@@ -24,6 +24,12 @@ var telefireLib = ffi.Library(dllPath, {
     "ListProjects": [
         "string", ["string"]
     ],
+    "ListProjectFiles": [
+        "string", ["string"]
+    ],
+    "SelectProjectFile": [
+        "string", ["string"]
+    ],
 });
 exports.Login = telefireLib.Login;
 exports.SetCommunication = telefireLib.SetCommunication;
@@ -32,3 +38,5 @@ exports.getConfiguration = telefireLib.GetConfiguration;
 exports.setConfiguration = telefireLib.SetConfiguration;
 exports.getDevice = telefireLib.GetDevice;
 exports.listProjects = telefireLib.ListProjects;
+exports.listProjectFiles = telefireLib.ListProjectFiles;
+exports.selectProjectFile = telefireLib.SelectProjectFile;

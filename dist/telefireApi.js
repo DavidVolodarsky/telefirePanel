@@ -42,6 +42,16 @@ var TelefireApi = /** @class */ (function () {
         var resStr = telefireLibDll.listProjects(reqStr);
         return JSON.parse(resStr);
     };
+    TelefireApi.listProjectFiles = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.listProjectFiles(reqStr);
+        return JSON.parse(resStr);
+    };
+    TelefireApi.selectProjectFile = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.listProjectFiles(reqStr);
+        return JSON.parse(resStr);
+    };
     return TelefireApi;
 }());
 exports.TelefireApi = TelefireApi;
