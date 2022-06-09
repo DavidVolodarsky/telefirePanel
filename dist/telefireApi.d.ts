@@ -3,7 +3,7 @@ import { ISetCommunicationReq, ISetCommunicationRes } from "./telefireApiInterfa
 import { IConnectPanelReq, IConnectPanelRes } from "./telefireApiInterface-connect";
 import { IGetConfigurationReq, IGetConfigurationRes } from "./telefireApiInterface-configuration";
 import { ISetConfigurationReq, ISetConfigurationRes } from "./telefireApiInterface-configuration";
-import { IListProjectFilesRequest, IListProjectFilesResponse, IListProjectsRequest, IListProjectsResponse, ISelectProjectFileRequest, ISelectProjectFileResponse } from "./telefireApiInterface-projectManagement";
+import { ICreateNewProjectRequest, ICreateNewProjectResponse, IListProjectFilesRequest, IListProjectFilesResponse, IListProjectsRequest, IListProjectsResponse, ISelectProjectFileRequest, ISelectProjectFileResponse } from "./telefireApiInterface-projectManagement";
 export declare class TelefireApi {
     static login: (reqObj: ILoginRequest) => ILoginResponse;
     static setCommunication: (reqObj: ISetCommunicationReq) => ISetCommunicationRes;
@@ -13,4 +13,5 @@ export declare class TelefireApi {
     static listProjects: (reqObj: IListProjectsRequest) => IListProjectsResponse;
     static listProjectFiles: (reqObj: IListProjectFilesRequest) => IListProjectFilesResponse;
     static selectProjectFile: (reqObj: ISelectProjectFileRequest) => ISelectProjectFileResponse;
+    static createNewProject: (reqObj: ICreateNewProjectRequest) => ICreateNewProjectResponse;
 }

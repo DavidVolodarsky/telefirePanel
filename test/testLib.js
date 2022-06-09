@@ -1,6 +1,7 @@
 console.log('testLib run:');
 
 const telefireLib = require('../dist/telefireLibDll');
+const {setConfigurationMock, createNewProjectMock} = require("./mock");
 
 const logMethodResponse = (method, object) => {
     console.log(`_____________________________________${method}_______________________________________________\n`);
@@ -12,74 +13,73 @@ const logMethodResponse = (method, object) => {
 }
 
 // logMethodResponse(
+//     'Login',
+//     {
+//         Name: 'Login',
+//         OldPcID: 1122492734,
+//         NewPcID: '0025_38BA_61B0_7D83',
+//         CreateDirectoris: false,
+//
+//     }
+// );
+//
+// logMethodResponse(
+//     'SetCommunication',
+//     {
+//         Name: 'ListProjects',
+//         Dir: 'C:\\projects',
+//     }
+// );
+//
+// logMethodResponse(
+//     'ConnectToPanel',
+//     {
+//         Name: 'ConnectToPanel',
+//         Panel: 'Local',
+//         OwnerShip: 0,
+//     }
+// );
+//
+// logMethodResponse(
 //     'listProjects',
 //     {
 //         Name: 'ListProjects',
 //         Dir: 'C://projects//test//telefireRar',
 //     }
 // );
-
-logMethodResponse(
-    'Login',
-    {
-        Name: 'Login',
-        OldPcID: 1122492734,
-        NewPcID: '0025_38BA_61B0_7D83',
-        CreateDirectoris: false,
-
-    }
-);
-
-logMethodResponse(
-    'SetCommunication',
-    {
-        Name: 'ListProjects',
-        Dir: 'C:\\projects',
-    }
-);
-
-logMethodResponse(
-    'ConnectToPanel',
-    {
-        Name: 'ConnectToPanel',
-        Panel: 'Local',
-        OwnerShip: 0,
-    }
-);
-
-logMethodResponse(
-    'listProjectFiles',
-    {
-        Name: 'ListProjectFiles',
-        Project: 'C:\\TFclient\\projects\\BASIC',
-    }
-);
-
-logMethodResponse(
-    'selectProjectFile',
-    {
-        Name: 'SelectProjectFile',
-        filename: 'C:\\TFclient\\projects\\BASIC\\Base.nanl',
-    }
-);
-
-logMethodResponse(
-    'getConfiguration',
-    {
-        Name: 'GetConfiguration',
-        Panel: 'Local',
-        Source: 'File',
-        Type: 'Adr7000',
-    }
-);
-
+//
 // logMethodResponse(
-//     'setConfiguration',
+//     'listProjectFiles',
 //     {
-//         Name: 'setConfiguration',
+//         Name: 'ListProjectFiles',
+//         Project: 'C:\\TFclient\\projects\\BASIC',
+//     }
+// );
+//
+// logMethodResponse(
+//     'selectProjectFile',
+//     {
+//         Name: 'SelectProjectFile',
+//         filename: 'C:\\TFclient\\projects\\BASIC\\Base.nanl',
+//     }
+// );
+//
+// logMethodResponse(
+//     'getConfiguration',
+//     {
+//         Name: 'GetConfiguration',
 //         Panel: 'Local',
 //         Source: 'File',
 //         Type: 'Adr7000',
-//         result: 'OK',
 //     }
+// );
+//
+// logMethodResponse(
+//     'setConfiguration',
+//     {...setConfigurationMock}
+// );
+//
+// logMethodResponse(
+//     'createNewProject',
+//     {...createNewProjectMock}
 // );

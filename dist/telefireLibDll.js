@@ -30,6 +30,9 @@ var telefireLib = ffi.Library(dllPath, {
     "SelectProjectFile": [
         "string", ["string"]
     ],
+    "CreteNewProject": [
+        "string", ["string"]
+    ],
 });
 exports.Login = telefireLib.Login;
 exports.SetCommunication = telefireLib.SetCommunication;
@@ -40,3 +43,4 @@ exports.getDevice = telefireLib.GetDevice;
 exports.listProjects = telefireLib.ListProjects;
 exports.listProjectFiles = telefireLib.ListProjectFiles;
 exports.selectProjectFile = telefireLib.SelectProjectFile;
+exports.createNewProject = telefireLib.CreteNewProject;

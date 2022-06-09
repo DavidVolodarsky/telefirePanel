@@ -38,4 +38,20 @@ interface ISelectProjectFileResponse {
     filename: string;
     Result: string;
 }
-export { IListProjectsRequest, IListProjectsResponse, IListProjectFilesRequest, IListProjectFilesResponse, ISelectProjectFileRequest, ISelectProjectFileResponse };
+interface ICreateNewProjectRequest {
+    panels: Record<string, string>;
+    Name: string;
+    dir: string;
+    projectname: string;
+    language: string;
+    count: number;
+    type: string;
+    user: string;
+}
+interface ICreateNewProjectResponse {
+    Name: string;
+    dir: string;
+    projectname: string;
+    Result: string;
+}
+export { IListProjectsRequest, IListProjectsResponse, IListProjectFilesRequest, IListProjectFilesResponse, ISelectProjectFileRequest, ISelectProjectFileResponse, ICreateNewProjectRequest, ICreateNewProjectResponse, };
