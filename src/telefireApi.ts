@@ -80,7 +80,7 @@ export class TelefireApi {
     static selectProjectFile = (reqObj: ISelectProjectFileRequest): ISelectProjectFileResponse => {
         const reqStr = JSON.stringify(reqObj);
 
-        const resStr = telefireLibDll.listProjectFiles(reqStr);
+        const resStr = telefireLibDll.selectProjectFile(reqStr);
 
         return JSON.parse(resStr) as ISelectProjectFileResponse;
     }
