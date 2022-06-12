@@ -20,7 +20,7 @@ export class TelefireApi {
     static getPCCodes = (reqObj: IGetPCCodesReq): IGetPCCodesRes => {
         const reqStr = JSON.stringify(reqObj);
 
-        const resStr = telefireLibDll.getPCCodes(reqObj);
+        const resStr = telefireLibDll.getPcCodes(reqStr);
 
         return JSON.parse(resStr) as IGetPCCodesRes;
     }

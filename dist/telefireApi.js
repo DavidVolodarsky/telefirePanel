@@ -8,7 +8,7 @@ var TelefireApi = /** @class */ (function () {
     //GET PC CODE
     TelefireApi.getPCCodes = function (reqObj) {
         var reqStr = JSON.stringify(reqObj);
-        var resStr = telefireLibDll.getPCCodes(reqObj);
+        var resStr = telefireLibDll.getPcCodes(reqStr);
         return JSON.parse(resStr);
     };
     //LOGIN API
