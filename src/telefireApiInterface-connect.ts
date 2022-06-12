@@ -1,5 +1,23 @@
 //interface for telefire APi - CONNECT
 
+//-----GetPCCodes-----
+interface IGetPCCodesReq {
+    Name :string,
+    Directory:string,
+    ProjectName:string,
+    FileName:string,
+    Panel :string,
+    Type :string,
+    Password :string,
+    PanelVersion :string,
+}
+
+interface IGetPCCodesRes {
+    Name: string,
+    OldPCId : string,
+    NewPCId : string,
+}
+
 //-----Login-------
 interface ILoginRequest {
     Name: string,
@@ -52,4 +70,4 @@ interface IConnectPanelRes{
     ownership:string
 }
 
-export {ILoginRequest,ILoginResponse,ISetCommunicationReq,ISetCommunicationRes,IConnectPanelReq,IConnectPanelRes};
+export {IGetPCCodesReq,IGetPCCodesRes,ILoginRequest,ILoginResponse,ISetCommunicationReq,ISetCommunicationRes,IConnectPanelReq,IConnectPanelRes};

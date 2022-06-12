@@ -3,6 +3,10 @@ const path = require('path');
 const dllPath = path.join(__dirname, "dlls", "TelefireApiMock.dll");
 
 const telefireLib = ffi.Library(dllPath, {
+    "GetPCCodes":[
+        "string",["string"]
+    ],
+
     "Login": [
         "string", ["string"]
     ],
@@ -45,7 +49,7 @@ const telefireLib = ffi.Library(dllPath, {
 });
 
 
-
+exports.getPcCodes = telefireLib.GetPCCodes;
 exports.Login = telefireLib.Login;
 exports.SetCommunication = telefireLib.SetCommunication;
 exports.ConnectToPanel = telefireLib.ConnectToPanel;

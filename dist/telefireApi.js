@@ -5,6 +5,12 @@ var telefireLibDll = require('../dist/telefireLibDll');
 var TelefireApi = /** @class */ (function () {
     function TelefireApi() {
     }
+    //GET PC CODE
+    TelefireApi.getPCCodes = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.getPCCodes(reqObj);
+        return JSON.parse(resStr);
+    };
     //LOGIN API
     TelefireApi.login = function (reqObj) {
         var reqStr = JSON.stringify(reqObj);
@@ -60,6 +66,3 @@ var TelefireApi = /** @class */ (function () {
     return TelefireApi;
 }());
 exports.TelefireApi = TelefireApi;
-// console.log('loginAPI:', TelefireApi.login({Name:'Stas', OldPcID: 'Test', NewPcID:'test string'}));
-// console.log('SetCommunication:', TelefireApi.setCommunication({Name:'Set Com', Type:'USB', Baud:2, Port:'80', Vid:2, Pid:2, Ip:'128.32.4545', TcPort:3000}));
-// console.log('connectToPanel:', TelefireApi.connectToPanel({Name:'Set Com', Panel:234, OwnerShip:'dart'}));

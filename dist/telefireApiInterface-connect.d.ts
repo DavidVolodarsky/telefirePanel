@@ -1,3 +1,18 @@
+interface IGetPCCodesReq {
+    Name: string;
+    Directory: string;
+    ProjectName: string;
+    FileName: string;
+    Panel: string;
+    Type: string;
+    Password: string;
+    PanelVersion: string;
+}
+interface IGetPCCodesRes {
+    Name: string;
+    OldPCId: string;
+    NewPCId: string;
+}
 interface ILoginRequest {
     Name: string;
     CreateDirections: boolean;
@@ -41,4 +56,4 @@ interface IConnectPanelRes {
     date: string;
     ownership: string;
 }
-export { ILoginRequest, ILoginResponse, ISetCommunicationReq, ISetCommunicationRes, IConnectPanelReq, IConnectPanelRes };
+export { IGetPCCodesReq, IGetPCCodesRes, ILoginRequest, ILoginResponse, ISetCommunicationReq, ISetCommunicationRes, IConnectPanelReq, IConnectPanelRes };

@@ -1,4 +1,5 @@
 //functions for with 'telefire' dll file api
+import {IGetPCCodesReq,IGetPCCodesRes} from "./telefireApiInterface-connect";
 import {ILoginRequest, ILoginResponse} from "./telefireApiInterface-connect";
 import {ISetCommunicationReq, ISetCommunicationRes} from "./telefireApiInterface-connect";
 import {IConnectPanelReq, IConnectPanelRes} from "./telefireApiInterface-connect";
@@ -15,6 +16,15 @@ import {
 const telefireLibDll = require('../dist/telefireLibDll');
 
 export class TelefireApi {
+    //GET PC CODE
+    static getPCCodes = (reqObj: IGetPCCodesReq): IGetPCCodesRes => {
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.getPCCodes(reqObj);
+
+        return JSON.parse(resStr) as IGetPCCodesRes;
+    }
+
     //LOGIN API
     static login = (reqObj: ILoginRequest): ILoginResponse => {
         const reqStr = JSON.stringify(reqObj);
@@ -95,7 +105,3 @@ export class TelefireApi {
     }
 }
 
-
-// console.log('loginAPI:', TelefireApi.login({Name:'Stas', OldPcID: 'Test', NewPcID:'test string'}));
-// console.log('SetCommunication:', TelefireApi.setCommunication({Name:'Set Com', Type:'USB', Baud:2, Port:'80', Vid:2, Pid:2, Ip:'128.32.4545', TcPort:3000}));
-// console.log('connectToPanel:', TelefireApi.connectToPanel({Name:'Set Com', Panel:234, OwnerShip:'dart'}));

@@ -12,6 +12,27 @@ exports.createNewProjectMock = {
     user: "user1"
 };
 
+exports.setCommunicationMock = {
+    type: "USB",
+    name: "SetCommunicationChannel",
+    baud: 0,
+    port: undefined,
+    vid: 8137,
+    pid: 33320,
+    ip: undefined,
+    tcPort:undefined
+}
+
+exports.getPCCodesMock = {
+    Name :'GetPCCodes',
+    Directory:'',
+    ProjectName:'',
+    FileName:'',
+    Panel :'',
+    Type :'',
+    Password :'',
+    PanelVersion :'',
+}
 
 exports.setConfigurationMock = {
     partnres: [

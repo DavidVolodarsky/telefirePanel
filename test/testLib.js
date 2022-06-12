@@ -1,7 +1,7 @@
 console.log('testLib run:');
 
 const telefireLib = require('../dist/telefireLibDll');
-const {setConfigurationMock, createNewProjectMock} = require("./mock");
+const {getPCCodesMock,setConfigurationMock,setCommunicationMock ,createNewProjectMock} = require("./mock");
 
 const logMethodResponse = (method, object) => {
     console.log(`_____________________________________${method}_______________________________________________\n`);
@@ -12,33 +12,51 @@ const logMethodResponse = (method, object) => {
     }
 }
 
-// logMethodResponse(
-//     'Login',
-//     {
-//         Name: 'Login',
-//         OldPcID: 1122492734,
-//         NewPcID: '0025_38BA_61B0_7D83',
-//         CreateDirectoris: false,
-//
-//     }
-// );
-//
-// logMethodResponse(
-//     'SetCommunication',
-//     {
-//         Name: 'ListProjects',
-//         Dir: 'C:\\projects',
-//     }
-// );
-//
-// logMethodResponse(
-//     'ConnectToPanel',
-//     {
-//         Name: 'ConnectToPanel',
-//         Panel: 'Local',
-//         OwnerShip: 0,
-//     }
-// );
+logMethodResponse(
+    'getPcCodes',
+    {
+        Name :'GetPCCodes',
+        Directory:undefined,
+        ProjectName:undefined,
+        FileName:undefined,
+        Panel :undefined,
+        Type :undefined,
+        Password :undefined,
+        PanelVersion :undefined,
+    }
+);
+
+logMethodResponse(
+    'Login',
+    {
+        Name: 'Login',
+        OldPcID: '',
+        NewPcID: '',
+        CreateDirectoris: true,
+
+    }
+);
+
+logMethodResponse(
+    'SetCommunication',
+    {type: "USB",
+        name: "SetCommunicationChannel",
+        baud: 0,
+        port: undefined,
+        vid: 8137,
+        pid: 33320,
+        ip: undefined,
+        tcPort:undefined}
+);
+
+logMethodResponse(
+    'ConnectToPanel',
+    {
+        Name: 'ConnectToPanel',
+        Panel: 'Local',
+        OwnerShip: 'Telefire',
+    }
+);
 //
 // logMethodResponse(
 //     'listProjects',
@@ -73,7 +91,7 @@ const logMethodResponse = (method, object) => {
 //         Type: 'Adr7000',
 //     }
 // );
-//
+// //
 // logMethodResponse(
 //     'setConfiguration',
 //     {...setConfigurationMock}

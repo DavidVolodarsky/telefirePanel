@@ -3,6 +3,9 @@ var ffi = require('ffi-napi');
 var path = require('path');
 var dllPath = path.join(__dirname, "dlls", "TelefireApiMock.dll");
 var telefireLib = ffi.Library(dllPath, {
+    "GetPCCodes": [
+        "string", ["string"]
+    ],
     "Login": [
         "string", ["string"]
     ],
@@ -34,6 +37,7 @@ var telefireLib = ffi.Library(dllPath, {
         "string", ["string"]
     ],
 });
+exports.getPcCodes = telefireLib.GetPCCodes;
 exports.Login = telefireLib.Login;
 exports.SetCommunication = telefireLib.SetCommunication;
 exports.ConnectToPanel = telefireLib.ConnectToPanel;
