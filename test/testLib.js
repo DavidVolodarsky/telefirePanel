@@ -39,10 +39,10 @@ logMethodResponse(
 
 logMethodResponse(
     'SetCommunication',
-    {type: "USB",
+    {type: "RS232",
         name: "SetCommunicationChannel",
         baud: 0,
-        port: undefined,
+        port: 80,
         vid: 8137,
         pid: 33320,
         ip: undefined,
@@ -57,31 +57,31 @@ logMethodResponse(
         OwnerShip: 'Telefire',
     }
 );
-//
-// logMethodResponse(
-//     'listProjects',
-//     {
-//         Name: 'ListProjects',
-//         Dir: 'C://projects//test//telefireRar',
-//     }
-// );
-//
-// logMethodResponse(
-//     'listProjectFiles',
-//     {
-//         Name: 'ListProjectFiles',
-//         Project: 'C:\\TFclient\\projects\\BASIC',
-//     }
-// );
-//
-// logMethodResponse(
-//     'selectProjectFile',
-//     {
-//         Name: 'SelectProjectFile',
-//         filename: 'C:\\TFclient\\projects\\BASIC\\Base.nanl',
-//     }
-// );
-//
+
+logMethodResponse(
+    'listProjects',
+    {
+        Name: 'ListProjects',
+        Dir: 'C://projects//test//telefireRar',
+    }
+);
+
+logMethodResponse(
+    'listProjectFiles',
+    {
+        Name: 'ListProjectFiles',
+        Project: 'C:\\TFclient\\projects\\BASIC',
+    }
+);
+
+logMethodResponse(
+    'selectProjectFile',
+    {
+        Name: 'SelectProjectFile',
+        filename: 'C:\\TFclient\\projects\\BASIC\\Base.nanl',
+    }
+);
+
 // logMethodResponse(
 //     'getConfiguration',
 //     {
@@ -96,8 +96,8 @@ logMethodResponse(
 //     'setConfiguration',
 //     {...setConfigurationMock}
 // );
-//
-// logMethodResponse(
-//     'createNewProject',
-//     {...createNewProjectMock}
-// );
+
+logMethodResponse(
+    'createNewProject',
+    {...createNewProjectMock}
+);

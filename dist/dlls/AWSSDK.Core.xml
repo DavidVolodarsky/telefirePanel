@@ -7411,6 +7411,12 @@
             <param name="executionContext">The execution context, it contains the
             request and response context.</param>
         </member>
+        <member name="M:Amazon.Runtime.Internal.Marshaller.SetRecursionDetectionHeader(System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Sets the X-Amzn-Trace-Id header for recursion detection within Lambda workloads.
+            </summary>
+            <param name="headers">Current request headers before marshalling.</param>
+        </member>
         <member name="T:Amazon.Runtime.Internal.MetricsHandler">
             <summary>
             This handler manages the metrics used to time the complete call and
@@ -10254,6 +10260,12 @@
             <summary>
             InstanceProfileAWSCredentials allows configuring Roles and every instance hits IMDS individually.  
             This class has a singleton timer task that caches instance profile credentials every 2 minutes.
+            </summary>
+        </member>
+        <member name="F:Amazon.Runtime.DefaultInstanceProfileAWSCredentials._imdsRefreshFailed">
+            <summary>
+            Control flag: in the event IMDS returns an expired credential, a refresh must be immediately
+            retried, if it continues to fail, then retry every 5-10 minutes.
             </summary>
         </member>
         <member name="M:Amazon.Runtime.DefaultInstanceProfileAWSCredentials.GetCredentials">
@@ -14777,6 +14789,11 @@
             The set of accepted and valid Url path characters per RFC3986.
             </summary>
         </member>
+        <member name="F:Amazon.Util.AWSSDKUtils.ValidTraceIdHeaderValueCharacters">
+            <summary>
+            The set of characters which are not to be encoded as part of the X-Amzn-Trace-Id header values
+            </summary>
+        </member>
         <member name="F:Amazon.Util.AWSSDKUtils.UrlEncodedContent">
             <summary>
             The string representing Url Encoded Content in HTTP requests
@@ -15091,6 +15108,14 @@
             Currently recognised RFC versions are 1738 (Dec '94) and 3986 (Jan '05). 
             If the specified RFC is not recognised, 3986 is used by default.
             </remarks>
+        </member>
+        <member name="M:Amazon.Util.AWSSDKUtils.EncodeTraceIdHeaderValue(System.String)">
+            <summary>
+            Percent encodes the X-Amzn-Trace-Id header value skipping any characters within the
+            ValidTraceIdHeaderValueCharacters character set.
+            </summary>
+            <param name="value">The X-Amzn-Trace-Id header value to encode.</param>
+            <returns>An encoded X-Amzn-Trace-Id header value.</returns>
         </member>
         <member name="M:Amazon.Util.AWSSDKUtils.ProtectEncodedSlashUrlEncode(System.String,System.Boolean)">
             <summary>
