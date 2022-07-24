@@ -46,6 +46,18 @@ const telefireLib = ffi.Library(dllPath, {
     "CreteNewProject": [
         "string", ["string"]
     ],
+
+    "SetDevices":[
+        "string", ["string"]
+    ],
+
+    "GetMatrix":[
+        "string", ["string"]
+    ],
+
+    "SetMatrixes":[
+        "string", ["string"]
+    ],
 });
 
 
@@ -60,3 +72,6 @@ exports.listProjects = telefireLib.ListProjects;
 exports.listProjectFiles = telefireLib.ListProjectFiles;
 exports.selectProjectFile = telefireLib.SelectProjectFile;
 exports.createNewProject = telefireLib.CreteNewProject;
+exports.setDevices = telefireLib.SetDevices;
+exports.getMatrix = telefireLib.GetMatrix;
+exports.setMatrixes = telefireLib.SetMatrixes;

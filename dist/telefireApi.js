@@ -63,6 +63,24 @@ var TelefireApi = /** @class */ (function () {
         var resStr = telefireLibDll.createNewProject(reqStr);
         return JSON.parse(resStr);
     };
+    //SET DEVICES
+    TelefireApi.setDevices = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.setDevices(reqStr);
+        return JSON.parse(resStr);
+    };
+    //GET MATRIX
+    TelefireApi.getMatrix = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.getMatrix(reqStr);
+        return JSON.parse(resStr);
+    };
+    //SET MATRIXES
+    TelefireApi.setMatrixes = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.setMatrixes(reqStr);
+        return JSON.parse(resStr);
+    };
     return TelefireApi;
 }());
 exports.TelefireApi = TelefireApi;

@@ -6,10 +6,20 @@ import {IConnectPanelReq, IConnectPanelRes} from "./telefireApiInterface-connect
 import {IGetConfigurationReq, IGetConfigurationRes} from "./telefireApiInterface-configuration";
 import {ISetConfigurationReq, ISetConfigurationRes} from "./telefireApiInterface-configuration";
 import {
-    ICreateNewProjectRequest, ICreateNewProjectResponse,
-    IListProjectFilesRequest, IListProjectFilesResponse,
+    ICreateNewProjectRequest,
+    ICreateNewProjectResponse,
+    IListProjectFilesRequest,
+    IListProjectFilesResponse,
     IListProjectsRequest,
-    IListProjectsResponse, ISelectProjectFileRequest, ISelectProjectFileResponse
+    IListProjectsResponse,
+    ISelectProjectFileRequest,
+    ISelectProjectFileResponse,
+    ISetDevicesRequest,
+    ISetDevicesResponse,
+    IGetMatrixRequest,
+    IGetMatrixResponse,
+    ISetMatrixesRequest,
+    ISetMatrixesResponse
 } from "./telefireApiInterface-projectManagement";
 
 
@@ -102,6 +112,33 @@ export class TelefireApi {
         const resStr = telefireLibDll.createNewProject(reqStr);
 
         return JSON.parse(resStr) as ICreateNewProjectResponse;
+    }
+
+    //SET DEVICES
+    static setDevices = (reqObj:ISetDevicesRequest):ISetDevicesResponse =>{
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.setDevices(reqStr);
+
+        return JSON.parse(resStr) as ISetDevicesResponse;
+    }
+
+    //GET MATRIX
+    static getMatrix = (reqObj:IGetMatrixRequest):IGetMatrixResponse =>{
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.getMatrix(reqStr);
+
+        return JSON.parse(resStr) as IGetMatrixResponse;
+    }
+
+    //SET MATRIXES
+    static setMatrixes = (reqObj:ISetMatrixesRequest):ISetMatrixesResponse =>{
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.setMatrixes(reqStr);
+
+        return JSON.parse(resStr) as ISetMatrixesResponse;
     }
 }
 
