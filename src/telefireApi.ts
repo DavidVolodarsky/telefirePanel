@@ -19,7 +19,9 @@ import {
     IGetMatrixRequest,
     IGetMatrixResponse,
     ISetMatrixesRequest,
-    ISetMatrixesResponse
+    ISetMatrixesResponse,
+    IGetDeviceRequest,
+    IGetDeviceResponse
 } from "./telefireApiInterface-projectManagement";
 
 
@@ -112,6 +114,15 @@ export class TelefireApi {
         const resStr = telefireLibDll.createNewProject(reqStr);
 
         return JSON.parse(resStr) as ICreateNewProjectResponse;
+    }
+
+    //GET DEVICE
+    static getDevice = (reqObj: IGetDeviceRequest): IGetDeviceResponse => {
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.getDevice(reqStr);
+
+        return JSON.parse(resStr) as IGetDeviceResponse;
     }
 
     //SET DEVICES

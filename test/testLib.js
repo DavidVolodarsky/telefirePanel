@@ -1,7 +1,9 @@
 console.log('testLib run:');
 
 const telefireLib = require('../dist/telefireLibDll');
-const {getPCCodesMock,setConfigurationMock,setCommunicationMock ,createNewProjectMock} = require("./mock");
+const {getPCCodesMock,setConfigurationMock,setCommunicationMock ,createNewProjectMock, getMatrixMock, setMatrixesMock,
+    getDeviceMock
+} = require("./mock");
 
 const logMethodResponse = (method, object) => {
     console.log(`_____________________________________${method}_______________________________________________\n`);
@@ -82,22 +84,43 @@ logMethodResponse(
     }
 );
 
-// logMethodResponse(
-//     'getConfiguration',
-//     {
-//         Name: 'GetConfiguration',
-//         Panel: 'Local',
-//         Source: 'File',
-//         Type: 'Adr7000',
-//     }
-// );
-// //
-// logMethodResponse(
-//     'setConfiguration',
-//     {...setConfigurationMock}
-// );
+logMethodResponse(
+    'getConfiguration',
+    {
+        Name: 'GetConfiguration',
+        Panel: 'Local',
+        Source: 'File',
+        Type: 'Adr7000',
+    }
+);
+//
+logMethodResponse(
+    'setConfiguration',
+    {...setConfigurationMock}
+);
 
 logMethodResponse(
     'createNewProject',
     {...createNewProjectMock}
 );
+
+logMethodResponse(
+    'getMatrix',
+    {...getMatrixMock}
+);
+
+logMethodResponse(
+    'getMatrix',
+    {...getMatrixMock}
+);
+
+logMethodResponse(
+    'setMatrixes',
+    {...setMatrixesMock}
+);
+
+logMethodResponse(
+    'getDevice',
+    {...getDeviceMock}
+);
+

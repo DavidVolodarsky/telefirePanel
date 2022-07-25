@@ -64,6 +64,20 @@ interface ICreateNewProjectResponse {
     Result: string,
 }
 
+interface IGetDeviceRequest {
+    Name: string,
+    Panel: string,
+    Source: string,
+    Loop: string,
+    Address: string,
+    PanelType: string,
+    Type: string,
+}
+
+interface IGetDeviceResponse {
+
+}
+
 interface SetOneDeviceRequest {
     Serial: number;
     Loop: number;
@@ -187,4 +201,6 @@ export {
     IGetMatrixResponse,
     ISetMatrixesRequest,
     ISetMatrixesResponse,
+    IGetDeviceRequest,
+    IGetDeviceResponse
 }

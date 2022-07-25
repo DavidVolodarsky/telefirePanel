@@ -20,30 +20,77 @@ exports.setCommunicationUsbMock = {
     vid: 8137,
     pid: 33320,
     ip: undefined,
-    tcPort:undefined
+    tcPort: undefined
 }
 
 exports.getPCCodesMock = {
-    Name :'GetPCCodes',
-    Directory:'',
-    ProjectName:'',
-    FileName:'',
-    Panel :'',
-    Type :'',
-    Password :'',
-    PanelVersion :'',
+    Name: 'GetPCCodes',
+    Directory: '',
+    ProjectName: '',
+    FileName: '',
+    Panel: '',
+    Type: '',
+    Password: '',
+    PanelVersion: '',
 }
 
 
-exports.setCommunicationTPCMock={
-        type: "USB",
-        name: "SetCommunicationChannel",
-        baud: 0,
-        port: undefined,
-        vid: 8137,
-        pid: 33320,
-        ip: undefined,
-        tcPort:undefined
+exports.setCommunicationTPCMock = {
+    type: "USB",
+    name: "SetCommunicationChannel",
+    baud: 0,
+    port: undefined,
+    vid: 8137,
+    pid: 33320,
+    ip: undefined,
+    tcPort: undefined
+}
+
+exports.getMatrixMock = {
+    Name: "GetMatrix",
+    Panel: "1",
+    Loop: "1",
+    Address: '001',
+    Source: 'File',
+    PanelType: "Adr7000",
+    Class: "Device",
+}
+
+exports.setMatrixesMock = {
+    Name: "SetMatrixes",
+    Panel: "Local",
+    Source: "File",
+    Password: "",
+    PanelVersion: 0.0,
+    Type: "Adr7000",
+    Count: 1,
+    Matrixes: [
+        {
+            Loop: 1,
+            Address: 1,
+            Class: "Device",
+            Count: 1,
+            ZoneConditions: null,
+            Conditions: null,
+            Devices: [
+                {
+                    Loop: 1,
+                    Address: 1,
+                },
+            ],
+            Zones: null,
+        }
+    ]
+}
+
+exports.getDeviceMock = {
+    Name: "GetDevice",
+    Panel: "Local",
+    Source: "File",
+    Loop: "1",
+    Address: "1",
+    PanelType: "Adr7000 ",
+    Type: "all panel",
 }
 
 exports.setConfigurationMock = {
