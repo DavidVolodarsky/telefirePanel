@@ -63,6 +63,12 @@ var TelefireApi = /** @class */ (function () {
         var resStr = telefireLibDll.createNewProject(reqStr);
         return JSON.parse(resStr);
     };
+    //GET DEVICE
+    TelefireApi.getDevice = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.getDevice(reqStr);
+        return JSON.parse(resStr);
+    };
     //SET DEVICES
     TelefireApi.setDevices = function (reqObj) {
         var reqStr = JSON.stringify(reqObj);

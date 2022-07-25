@@ -4,7 +4,7 @@ import { ISetCommunicationReq, ISetCommunicationRes } from "./telefireApiInterfa
 import { IConnectPanelReq, IConnectPanelRes } from "./telefireApiInterface-connect";
 import { IGetConfigurationReq, IGetConfigurationRes } from "./telefireApiInterface-configuration";
 import { ISetConfigurationReq, ISetConfigurationRes } from "./telefireApiInterface-configuration";
-import { ICreateNewProjectRequest, ICreateNewProjectResponse, IListProjectFilesRequest, IListProjectFilesResponse, IListProjectsRequest, IListProjectsResponse, ISelectProjectFileRequest, ISelectProjectFileResponse, ISetDevicesRequest, ISetDevicesResponse, IGetMatrixRequest, IGetMatrixResponse, ISetMatrixesRequest, ISetMatrixesResponse } from "./telefireApiInterface-projectManagement";
+import { ICreateNewProjectRequest, ICreateNewProjectResponse, IListProjectFilesRequest, IListProjectFilesResponse, IListProjectsRequest, IListProjectsResponse, ISelectProjectFileRequest, ISelectProjectFileResponse, ISetDevicesRequest, ISetDevicesResponse, IGetMatrixRequest, IGetMatrixResponse, ISetMatrixesRequest, ISetMatrixesResponse, IGetDeviceRequest, IGetDeviceResponse } from "./telefireApiInterface-projectManagement";
 export declare class TelefireApi {
     static getPCCodes: (reqObj: IGetPCCodesReq) => IGetPCCodesRes;
     static login: (reqObj: ILoginRequest) => ILoginResponse;
@@ -16,6 +16,7 @@ export declare class TelefireApi {
     static listProjectFiles: (reqObj: IListProjectFilesRequest) => IListProjectFilesResponse;
     static selectProjectFile: (reqObj: ISelectProjectFileRequest) => ISelectProjectFileResponse;
     static createNewProject: (reqObj: ICreateNewProjectRequest) => ICreateNewProjectResponse;
+    static getDevice: (reqObj: IGetDeviceRequest) => IGetDeviceResponse;
     static setDevices: (reqObj: ISetDevicesRequest) => ISetDevicesResponse;
     static getMatrix: (reqObj: IGetMatrixRequest) => IGetMatrixResponse;
     static setMatrixes: (reqObj: ISetMatrixesRequest) => ISetMatrixesResponse;
