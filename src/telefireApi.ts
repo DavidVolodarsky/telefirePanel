@@ -21,7 +21,11 @@ import {
     ISetMatrixesRequest,
     ISetMatrixesResponse,
     IGetDeviceRequest,
-    IGetDeviceResponse
+    IGetDeviceResponse,
+    ISyncPanelToFileRequest,
+    ISyncPanelToFileResponse,
+    ISyncFileToPanelRequest,
+    ISyncFileToPanelResponse
 } from "./telefireApiInterface-projectManagement";
 
 
@@ -150,6 +154,24 @@ export class TelefireApi {
         const resStr = telefireLibDll.setMatrixes(reqStr);
 
         return JSON.parse(resStr) as ISetMatrixesResponse;
+    }
+
+    //SYNC Panel To File
+    static syncPanelToFile = (reqObj:ISyncPanelToFileRequest):ISyncPanelToFileResponse=>{
+    const reqStr = JSON.stringify(reqObj);
+
+    const resStr = telefireLibDll.syncPanelToFile(reqStr);
+
+    return JSON.parse(resStr) as ISyncPanelToFileResponse;
+    }
+
+    //SYNC File To Panel
+    static syncFileToPanel = (reqObj:ISyncFileToPanelRequest):ISyncFileToPanelResponse=>{
+        const reqStr = JSON.stringify(reqObj);
+
+        const resStr = telefireLibDll.syncFileToPanel(reqStr);
+
+        return JSON.parse(resStr) as ISyncFileToPanelResponse;
     }
 }
 

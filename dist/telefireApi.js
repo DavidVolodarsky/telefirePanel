@@ -87,6 +87,18 @@ var TelefireApi = /** @class */ (function () {
         var resStr = telefireLibDll.setMatrixes(reqStr);
         return JSON.parse(resStr);
     };
+    //SYNC Panel To File
+    TelefireApi.syncPanelToFile = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.syncPanelToFile(reqStr);
+        return JSON.parse(resStr);
+    };
+    //SYNC File To Panel
+    TelefireApi.syncFileToPanel = function (reqObj) {
+        var reqStr = JSON.stringify(reqObj);
+        var resStr = telefireLibDll.syncFileToPanel(reqStr);
+        return JSON.parse(resStr);
+    };
     return TelefireApi;
 }());
 exports.TelefireApi = TelefireApi;

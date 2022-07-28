@@ -163,4 +163,41 @@ interface ISetMatrixesResponse {
     Count: number;
     Result: string;
 }
-export { IListProjectsRequest, IListProjectsResponse, IListProjectFilesRequest, IListProjectFilesResponse, ISelectProjectFileRequest, ISelectProjectFileResponse, ICreateNewProjectRequest, ICreateNewProjectResponse, ISetDevicesRequest, ISetDevicesResponse, IGetMatrixRequest, IGetMatrixResponse, ISetMatrixesRequest, ISetMatrixesResponse, IGetDeviceRequest, IGetDeviceResponse };
+interface ISyncPanelToFileRequest {
+    Name: string;
+    Directory: string;
+    ProjectName: string;
+    bool: boolean;
+    Panel: string;
+    Type: string;
+    language: string;
+    user: string;
+    int: number;
+    IsNew: boolean;
+    panels: object;
+}
+interface ISyncPanelToFileResponse {
+    Name: string;
+    FileName: string;
+    Panel: string;
+    Type: string;
+    Result: string;
+}
+interface ISyncFileToPanelRequest {
+    Name: string;
+    Directory: string;
+    ProjectName: string;
+    FileName: string;
+    Panel: string;
+    Type: string;
+    Password: string;
+    PanelVersion: number;
+}
+interface ISyncFileToPanelResponse {
+    Name: string;
+    FileName: string;
+    Panel: string;
+    Type: string;
+    Result: string;
+}
+export { IListProjectsRequest, IListProjectsResponse, IListProjectFilesRequest, IListProjectFilesResponse, ISelectProjectFileRequest, ISelectProjectFileResponse, ICreateNewProjectRequest, ICreateNewProjectResponse, ISetDevicesRequest, ISetDevicesResponse, IGetMatrixRequest, IGetMatrixResponse, ISetMatrixesRequest, ISetMatrixesResponse, IGetDeviceRequest, IGetDeviceResponse, ISyncPanelToFileRequest, ISyncPanelToFileResponse, ISyncFileToPanelRequest, ISyncFileToPanelResponse };

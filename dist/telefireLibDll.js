@@ -45,6 +45,12 @@ var telefireLib = ffi.Library(dllPath, {
     "SetMatrixes": [
         "string", ["string"]
     ],
+    "SyncPanelToFile": [
+        "string", ["string"]
+    ],
+    "SyncFileToPanel": [
+        "string", ["string"]
+    ],
 });
 exports.getPcCodes = telefireLib.GetPCCodes;
 exports.Login = telefireLib.Login;
@@ -60,3 +66,5 @@ exports.getDevice = telefireLib.GetDevice;
 exports.setDevices = telefireLib.SetDevices;
 exports.getMatrix = telefireLib.GetMatrix;
 exports.setMatrixes = telefireLib.SetMatrixes;
+exports.syncPanelToFile = telefireLib.SyncPanelToFile;
+exports.syncFileToPanel = telefireLib.SyncPanelToFile;
